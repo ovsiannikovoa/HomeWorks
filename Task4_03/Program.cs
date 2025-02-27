@@ -11,13 +11,15 @@
             {
                 Console.WriteLine("Введенные значения не соответствуют требованиям");
             }
-
-            int result = a;
-            for (int i = 2; i <= b; i++)
+            else
             {
-                result *= a;
+                int result = a;
+                for (int i = 2; i <= b; i++)
+                {
+                    result *= a;
+                }
+                Console.WriteLine(result);
             }
-            Console.WriteLine(result);
             Console.ReadKey();
         }
     }
