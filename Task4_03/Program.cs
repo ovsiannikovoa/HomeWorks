@@ -7,7 +7,7 @@
             int a = Convert.ToInt32(Console.ReadLine());
             int b = Convert.ToInt32(Console.ReadLine());
 
-            if (a < 0 || b < 0)
+            if (a <= 0 || b <= 0)
             {
                 Console.WriteLine("Введенные значения не соответствуют требованиям");
             }
