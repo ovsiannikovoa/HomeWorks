@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            const int n = 100;
+            const int n = 10;
             int[] array = new int[n];
             Random rnd = new Random();
 
@@ -12,7 +12,7 @@
             int odd = 0;
             for (int i = 0; i < n; i++)
             {
-                array[i] = rnd.Next(0, n + 1);
+                array[i] = rnd.Next(0, 101);
                 if (array[i] % 2 == 0)
                 {
                     even++;
