@@ -1,11 +1,10 @@
-﻿namespace Task1_1
+﻿namespace Task11_01
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Console.ReadKey();
         }
     }
 }
