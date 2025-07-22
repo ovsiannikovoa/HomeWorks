@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- Цветовые ресурсы -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="Gray"/>
+    <SolidColorBrush x:Key="HoverBrush" Color="Blue"/>
+    <SolidColorBrush x:Key="PressedBrush" Color="Red"/>
+    <SolidColorBrush x:Key="DisabledBrush" Color="LightGray"/>
+
+    <!-- Размеры элементов -->
+    <sys:Double x:Key="ControlHeight">30</sys:Double>
+    <sys:Double x:Key="ControlWidth">120</sys:Double>
+
+    <!-- Базовый стиль для кнопок -->
+    <Style x:Key="BaseButtonStyle" TargetType="Button">
+        <Setter Property="Height" Value="{StaticResource ControlHeight}"/>
+        <Setter Property="Width" Value="{StaticResource ControlWidth}"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+
+    <!-- Стиль для заголовка -->
+    <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+</ResourceDictionary>
