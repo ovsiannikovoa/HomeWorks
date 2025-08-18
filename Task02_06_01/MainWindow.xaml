@@ -1,0 +1,33 @@
+﻿<Window x:Class="Task02_06_01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task02_06_01"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="300">
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+        
+    <StackPanel Margin="10">
+        
+        <TextBox x:Name="txtBox"
+                 Text="Введите текст здесь"
+                 Margin="0,0,0,10"/>
+        
+        <CheckBox x:Name="showCheckBox"
+                  Content="Показать детали"
+                  Margin="0,0,0,10"/>
+        
+        <StackPanel Visibility="{Binding ElementName=showCheckBox, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}">
+            
+            <TextBlock Text="{Binding ElementName=txtBox, Path=Text.Length, StringFormat='Длина текста: {0}'}"
+                       Margin="0,0,0,10"/>
+
+            <ProgressBar Maximum="100"
+                         Value="{Binding ElementName=txtBox, Path=Text.Length, Mode=OneWay}"
+                         Height="20"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
