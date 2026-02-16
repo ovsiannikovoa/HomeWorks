@@ -1,0 +1,29 @@
+﻿<Window x:Class="FamalyPlacment.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Размещение деревьев" Height="200" Width="350"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,8">
+            <TextBlock Text="Тип дерева:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+            <ComboBox Width="150"
+                      ItemsSource="{Binding TreeTypes}"
+                      SelectedItem="{Binding SelectedTreeType}"
+                      />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,8">
+            <TextBlock Text="Количество:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+            <TextBox Width="80" Text="{Binding Count, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="Разместить" Margin="12,0,0,0" Command="{Binding PlaceCommand}" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Text="{Binding StatusMessage}" TextWrapping="Wrap"/>
+    </Grid>
+</Window>
